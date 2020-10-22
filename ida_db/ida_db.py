@@ -97,9 +97,7 @@ class pglogger(object):
         if type(channels)==str:
             channels_string = channels
         else:
-            import numpy
-            channels_string = numpy.array2string(channels,separator=',')
-            channels_string = channels_string[1:-1] # remove brackets
+            channels_string = ','.join(map(str, channels))
 
         if not time:
             time_string = "NOW() AT TIME ZONE 'America/New_York'"
