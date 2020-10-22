@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='ida-db',
-      version='0.1.2',
+      version='0.1.3',
       url='https://github.com/project-ida/ida-db',
       license='MIT',
       author='Project Ida',
