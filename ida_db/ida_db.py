@@ -84,6 +84,7 @@ class pglogger(object):
             channels_string = channels
         else:
             channels_string = ','.join(map(str, channels))
+            channels_string = channels_string[1:-1]  # remove brackets
 
         if not time:
             time_string = "NOW() AT TIME ZONE 'America/New_York'"
