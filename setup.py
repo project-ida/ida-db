@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 
 setup(name='ida-db',
-      version='0.1.3',
+      version='1.0.0',
       url='https://github.com/project-ida/ida-db',
       license='MIT',
-      author='Project Ida',
-      author_email='info@project-ida.org',
+      author='Florian Metzler',
+      author_email='fmetzler@mit.edu',
       description='Interface to Timescale PostgreSQL database',
       packages=find_packages(),
       install_requires=['psycopg2'],
