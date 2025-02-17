@@ -8,5 +8,5 @@ setup(name='ida-db',
       author_email='fmetzler@mit.edu',
       description='Interface to Timescale PostgreSQL database',
       packages=find_packages(),
-      install_requires=['psycopg2'],
+      install_requires=['psycopg2', 'numpy'],
       zip_safe=False)

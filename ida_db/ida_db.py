@@ -1,4 +1,5 @@
 import psycopg2
+import numpy
 
 
 class pglogger(object):
@@ -80,11 +81,16 @@ class pglogger(object):
                 return 0
 
     def log(self, table, channels, time=0):
-        if type(channels) == str:
+        if isinstance(channels, str):
             channels_string = channels
-        else:
+        elif isinstance(channels, list):
             channels_string = ','.join(map(str, channels))
             channels_string = channels_string[1:-1]  # remove brackets
+        elif isinstance(channels, numpy.ndarray):
+            channels_string = numpy.array2string(channels, separator=',')
+            channels_string = channels_string[1:-1]  # remove brackets
+        else:
+            raise ValueError("Unknown data type for channels")
 
         if not time:
             time_string = "NOW() AT TIME ZONE 'America/New_York'"
